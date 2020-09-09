@@ -1,0 +1,14 @@
+ javac  .java文件 将源文件转换成字节码文件(eg：javac HelloWorld.java)
+java  编译class 文件(eg:java helloChina【类名】){
+文件名与类目需要一致 
+public的类与文件名一致否则编译失败
+}
+JDK = JRE + JAVA      开发工具
+JRE =JVM + JAVASE 核心类库
+path 环境变量 windows 系统执行命令时所要收寻的路劲 
+path 环境变量的配置原因（任何的文件路劲下都可以执行JAVAC  JAVA指令） 
+cd  进入 
+rd 删除 
+del  删文件
+cd..  退出上一层
+CD/  退出根目录

@@ -1,0 +1,159 @@
+abstract class GeometricGraph {
+           System.out.println(this.toString())
+}
+
+class Graphical {                        //父类
+    public double C;                 //成员变量周长
+    public double S;                  //成员变量面积
+    public double r;                  //成员变量半径
+    public double Area;                  //成员变量表面积
+    public double Solid;                  //成员变量体积
+}
+
+abstract class PlantGraph {
+    public abstract double PlantGraphC();	//周长
+    public abstract double PlantGraphS();	//面积
+}
+
+package abstractclass;
+public abstract class Three DimensionalGraphics{
+     private double r;    　　　　　　　　//声明半径
+     private final double PI = 3.14;    //声明π
+     public Solid(double r) {        
+                      this.r = r;
+}
+      public double getR() {
+      return r;
+}
+      public void setR(double r) {
+       this.r = r;
+}
+      public double getPI() {
+       return this.PI;
+}
+     public abstract double getArea();      //声明抽象方法，取得表面积
+      public abstract double getSolid();    //声明抽象方法，取得体积
+
+package entity;
+    import abstractclass.Solid;
+    public class Cylinder extends Solid {
+     private double height;        //声明圆柱体的高度
+     //定义构造方法
+     public Cylinder(double r,double height) {
+         super(r);
+         this.height = height;
+    }
+ 
+     //实现父类抽象方法，求得圆柱的表面积
+     public double getArea() {
+         
+         return 4 * this.getPI() * Math.pow(this.getR(), 2);
+     }
+
+    //实现父类抽象方法，求得圆柱的体积
+     public double getSolid() {
+        
+       double result =  this.getPI() * Math.pow(this.getR(), 2) * this.height;
+        return Math.round(result*100.0) / 100.0;
+    }
+}
+
+
+
+
+ package entity;
+ 
+ import abstractclass.Solid;
+ 
+ public class Ball extends Solid {
+ 
+    //定义构造方法
+     public Ball (double r) {
+         super(r);
+    }
+ 
+     //实现父类抽象方法，求得球的表面积
+     public double getArea() {
+        
+         return 4 * this.getPI() * Math.pow(this.getR(), 2);
+     }
+
+     //实现父类抽象方法，求得球的体积
+     public double getSolid() {
+         
+         return this.getPI() * Math.pow(this.getR(), 3);
+     }
+    
+ }
+package entity;
+ 
+ import abstractclass.Rectangle;
+ 
+ public class Rectangle extends Rectangle {
+ 
+     //定义构造方法
+     public Rectangle(double sideLength, double height) {
+         
+       super(sideLength, height);
+    }
+ 
+     //实现父类的抽象方法，求得矩形面积
+    public double getArea() {
+        
+         return this.getHeight() * this.getSideLength();
+    }
+}
+package entity;
+ 
+ import abstractclass.Triangle;
+ 
+ public class Triangle extends Triangle {
+ 
+    //定义构造方法
+   public Triangle(double sideLength, double height) {
+         super(sideLength, height);
+    }
+
+    //实现父类的抽象方法，求得三角形面积
+    public double getArea() {
+         
+         return this.getHeight() * this.getSideLength() / 2;
+    }
+     package main;
+ 
+    import entity.Cylinder;
+    import entity.Sphere;
+    import entity.Triangle;
+    import abstractclass.Rectangle;
+    import abstractclass.Ball;
+ 
+    public class TestDemo {
+    public static void main(String args[]) {
+         
+        //实例化平面图形的抽象类对象
+         Planum tri = new Triangle(10, 10);           //三角形
+         Planum rec = new entity.Rectangle(10,20);    //矩形
+         
+         //实例化立体图形的抽象类对象
+         Solid sph = new Sphere(1);                   //球体
+         Solid cyl = new Cylinder(1, 10);             //圆柱
+         
+         //打印平面图形的面积
+         System.out.println( "三角形的面积：" + tri.getArea() );
+         System.out.println( "矩形的面积：" + rec.getArea() );
+         
+       System.out.println( "--------------------------------" );
+        
+         //打印球体的表面积和体积
+         System.out.println( "球体的表面积：" + sph.getArea() );
+         System.out.println( "球体的体积：" + sph.getSolid() );
+         
+        System.out.println( "--------------------------------" );
+         
+      //打印圆柱体的表面积和体积
+         System.out.println( "圆柱体的表面积：" + cyl.getArea() );
+        System.out.println( "圆柱的体积：" + cyl.getSolid() );    
+         
+     }
+ 
+ }

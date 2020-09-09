@@ -1,0 +1,44 @@
+get init  初始化本地仓库（github）
+get init 表示初始化这个文件夹 让他能有操作git l 
+ubtrack files 表示这个文件没被跟踪  就是git现在知道你添加了一个文件  但是还没有准备好处理它
+git  add .  （add和.之间有空格）表示  把一些文件的变动  添加到跟踪区域
+git status 查看git状态（准备被提交状态）
+git commit 
+这里其实是类似于编辑器的一个东西（vim） 如果你看过的话
+在这个区域里面输入的内容  相当于你给这次提交的备注3
+点 i 键  表示进入输入模式
+上下左右操控的  到最后一行删掉#
+然后输入first change
+按 esc 退出输入模式
+输入:(英文输入法)
+这个时候相当于进入了命令行模式
+再输入 wq 回车
+wq这个命令表示保存并退出
+q就是单纯退出
+这就完成了一次提交
+touch  hello.java这是git /linux /mac 上快速创建文件的方式
+！表示忽略一切修改强制退出
+git remote 操作远程仓库
+git remote add  远程仓库名称 远程仓库地址（一般第一个叫origin）  你的仓库地址
+一般只有  working tree clean（工作区干净） 的时候才会让提交， 有未跟踪的修改的时候不让提交
+git push -u 仓库名称 分支名称
+push  是推送的意思
+第一次-u 是为了 后面都不用指定 远程仓库名 和分支名
+2.创建新的分支
+分支是干嘛的吗
+一个分支一个版本
+git checkout -b  分支名
+一般在开发过程中  就是 我要开发一个东西 
+然后从主分支切除一条分支来  等开发完成 
+确定没有问题了 再推送回主分支上去
+这个时候一般做Merge操作
+首先你要回到主分支
+git  checkout xx  （代表切换到某种分支）
+前面提到 git checkout -b  分支名表示切出一条新分支
+如果不带-b 这个参数 那就是切换到某一条分支
+git merge  你要合并的分支名 表示把gan的提交 都合并到master上来
+查看状态
+your branch is ahead of 'zhuzhu/master' by 1commit
+你的分支 比 zhuzhu/master这条分支 提前一次提交
+你的master已经自动关联上远程的master了 
+所以在masterpush的时候不需要接参数 直接git push就可以
