@@ -1,7 +1,9 @@
-get init  初始化本地仓库（github）
+·get init  初始化本地仓库（github）
 get init 表示初始化这个文件夹 让他能有操作git l 
 ubtrack files 表示这个文件没被跟踪  就是git现在知道你添加了一个文件  但是还没有准备好处理它
 git  add .  （add和.之间有空格）表示  把一些文件的变动  添加到跟踪区域
+git add 《要添加的文件》
+.  在这条命令里  叫通配符  很多语言里面一个.都叫通配符  表示添加所有的文件
 git status 查看git状态（准备被提交状态）
 git commit 
 这里其实是类似于编辑器的一个东西（vim） 如果你看过的话

@@ -1,0 +1,32 @@
+远程仓库地址 git@github.com:Siom-symboint/zhuzhu.git  是类似这样的东西
+git commit -m '删除文件'
+refusing to merge unrelated histories
+本质上是因为 你的远程仓库有了 本地仓库没有的提交
+--allow-unrelated-histories  
+git pull 表示拉取远程仓库的代码
+这个参数表示允许未关联的代码拉下来
+refusing to merge unrelated histories
+这是因为远程仓库已经存在代码记录了，并且那部分代码没有和本地仓库进行关联，我们可以使用如下操作允许pull未关联的远程仓库旧代码：
+git clone 远程仓库地址
+cd text1
+这样你就把远程仓库拷贝下来了 形成了一个你新的本地库
+这是常用的方法  git clone 你要把别人项目下下来的时候也是这个命令
+第二种就是
+新建文件夹
+git init 
+到这里你得到了一个新的本地库 但是没有和远程关联
+git remote add 仓库名称  远程仓库地址
+到这里你关联上了远程仓库
+git pull 
+把远程的代码拉下来  保证本地仓库和远程仓库的版本一直的情况下 在去做提交
+新建文件夹
+git init 
+到这里你得到了一个新的本地库 但是没有和远程关联
+git remote add 仓库名称  远程仓库地址
+到这里你关联上了远程仓库
+===修改操作===
+git add . 
+git commit -m 'message'  到这里你本体做了提交
+git push  这里报错  因为本地仓库的版本落后于远程仓库  
+所以要先拉  git pull    并且因为你本地有了一次远程未关联的提交
+要加上--allow-unrelated-histories参数
