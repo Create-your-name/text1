@@ -1,0 +1,26 @@
+git init ：对git仓库初始化，可以让git来管理到这个目录，实际就是建立了.git文件
+git add <文件名> ：这必须是一个已经存在的文件，把该文件添加到暂存区
+git commit -m <备注> ：提交文件到git仓库
+git status ：查看当前git状态，有没有文件被修改，删除等等
+git diff：对文件做了什么修改
+git log：查看提交记录
+git log --pretty=oneline：查看文字比较简洁的提交记录
+git reset --hard HEAD^ ： 回退版本，HEAD^表示回退到上一个版本，HEAD^^表示回退到上上个版本，HEAD~100表示回退到之前100个版本
+git reset --hard <commitid>： 回到指定的commitid版本
+git reflog ：查看提交的各个版本的commitid
+git checkout -- file 撤销工作区的修改（注意"--"很重要，如果丢失了"-"，那就相当于切换分支的功能，git checkout 其实就是把工作区的版本恢复到版本库版本）
+git reset HEAD file 撤销暂存区修改
+git reset --hard HEAD^ 撤销版本库修改
+git rm或者rm ：删除文件（注意：rm删除的是工作区的文件，git rm是删除版本库的文件。若是删除工作区文件误删了，可以用 git checkout -- 文件名 去还原）
+git remote add origin <远程库地址>：和远程仓库连接
+git push -u origin master ：发送最新分支到远程仓库
+git clone：从远程仓库克隆,
+git pull :更新
+git branch :查看当前分支
+git checkout -b dev：-b表示创建并切换分支
+git checkout dev：切换到某个分支
+git branch -d dev：删除分支
+git merge dev：合并当前分支到master分支（注意：这是快速合并，有些冲突必须用手动去解决冲突）
+git remote：查看远程仓库的信息
+git remote -v：查看更详细的远程仓库信息
+git branch --set-upstream branch-name origin/branch-name：建立本地分支和远程分支链接
