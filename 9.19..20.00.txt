@@ -1,0 +1,20 @@
+ 节点流：访问文件进行输入输出操作
+处理流：进行加工转换处理的流
+
+又分为 
+面向字节流： inputStream outputStream （顶层抽象超类）
+面向字符流： Reader Writer （顶层抽象超类）
+
+字符流：目标一般是文本文件 实现 内部格式与外部格式的转换
+
+Reader:提供输入字符API Writer：输出字符API
+
+如果存储数据 为给其他文件处理 一般存储为二进制
+
+想按照类型控制输出格式 用printf %x 来控制
+
+%n 换行 与平台无关
+ 
+FileWriter文件写入 BufferedWriter 缓冲文件写入
+FileReader文件读取 BufferedReader 缓冲文件读取
+Buffered  各自有一个特殊方法 忽视平台的换行和按行读取 
